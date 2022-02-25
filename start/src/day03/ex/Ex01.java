@@ -59,17 +59,14 @@ public class Ex01 {
 	Scanner sc = new Scanner(System.in);
 	System.out.print("가로 길이 입력 : ");
 	int width = sc.nextInt();
-	System.out.println("가로 : "+width);
-	
 	System.out.print("세로 길이 입력 : ");
 	int height = sc.nextInt();
 	System.out.println("세로 : "+height);
 	
 	int sagak = width*height;
-	System.out.println("사각형의 넓이 : " + sagak);
-	double samgak = width*height/2.;
-	System.out.println("삼각형의 넓이 : " + samgak);
-	
+	System.out.println("사각형의 넓이 : "+sagak);
+	double samgak  = (width*height)/2f;
+	System.out.println("삼각형의 넓이 : "+samgak);
 	
 	}
 

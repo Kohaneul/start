@@ -8,73 +8,39 @@ public class Ex03 {
   	화폐단위 : 50000원 , 10000원, 5000원, 1000원, 500원, 100원, 50원, 10원,1원
   		       (필요없는것은 0개로 출력)
  */
-		
-	public static int MONEY = 84232;
-	public static int sum = 0;
 	public static void main(String[] args) {
-		
-		int money_50000 = 50000;
-		int money_10000 = 10000;
-		int money_5000 = 5000;
-		int money_1000 = 1000;
-		int money_500 = 500;
-		int money_100 = 100;
-		int money_50 = 50;
-		int money_10 = 10;
-		int money_1 = 1;
-		
-		int a = (MONEY/money_50000);
-		System.out.println("5만원권 : "+ a);
-		sum += a*money_50000;
-		
-		MONEY = MONEY-money_50000*a;
-		int b = (MONEY/money_10000);
-		System.out.println("1만원권 : "+ b);
-		sum += b*money_10000;
-		
-		MONEY = MONEY-money_10000*b;
-		int c = (MONEY/money_5000);
-		System.out.println("5천원권 : "+ c);
-		sum += c*money_5000;
-		
-		MONEY = MONEY-money_5000*c;
-		int d = (MONEY/money_1000);
-		System.out.println("천원권 : "+ d);
-		sum += d*money_1000;
-		
-		MONEY = MONEY-money_1000*d;
-		int f = (MONEY/money_500);
-		System.out.println("오백원권 : "+ f);
-		sum += f*money_500;
-		
-		MONEY = MONEY-money_500*f;
-		int g = (MONEY/money_100);
-		System.out.println("백원권 : "+ g);
-		sum += g*money_100;
+		int total = 84232;
+		int tmp = total;
 		
 		
-		MONEY = MONEY-money_100*g;
-		int h = (MONEY/money_50);
-		System.out.println("50원권 : "+ h);
-		sum += h*money_50;
+		int money_50000 = (int)total/50000;
+		tmp %= 50000;
+		int money_10000 = (int)tmp/10000;
+		tmp %= 10000;
+		int money_5000 = (int)tmp/5000;
+		tmp %= 5000;
+		int money_1000 = (int)tmp/1000;
+		tmp %= 1000;
+		int money_500 = (int)tmp/500;
+		tmp %= 500;
+		int money_100 = (int)tmp/100;
+		tmp %= 100;
+		int money_50 = (int)tmp/50;
+		tmp %= 50;
+		int money_10 = (int)tmp/10;
+		tmp %= 10;
 		
-		
-		MONEY = MONEY-money_50*h;
-		int i = (MONEY/money_10);
-		System.out.println("10원권 : "+ i);
-		sum += i*money_10;
-		
-		MONEY = MONEY-money_10*i;
-		int j = (MONEY/money_1);
-		System.out.println("1원권 : "+ j);
-		sum += j*money_1;
-	
-		System.out.println("총 합 : " +sum);
-		
-		
-		
-		
-		
+		System.out.printf("오만원권 : %s장\n",money_50000);
+		System.out.printf("만원권 : %s장\n",money_10000);
+		System.out.printf("오천원권 : %s장\n",money_5000);
+		System.out.printf("천원권 : %s장\n",money_1000);
+		System.out.printf("오백원 : %s개\n",money_500);
+		System.out.printf("백원 : %s개\n",money_100);
+		System.out.printf("오십원 : %s개\n",money_50);
+		System.out.printf("십원 : %s개\n",money_10);
+		System.out.printf("일원 : %s개\n",tmp);
+		/*
+		 
 		int total = 84232;
 		int tmp = total;
 		
@@ -117,7 +83,7 @@ public class Ex03 {
 		System.out.println("일원권 : "+il+"개");
 		
 		
-		
+		*/
 		
 		
 		
