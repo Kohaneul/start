@@ -20,18 +20,16 @@ package day04;
 
 public class Test05 {
 	public static void main(String[] args) {
-	//	할일 
+	int num = (int)((Math.random()*26)+1);
+	String str= "";
+	if(num%2==0) {
+		str = "짝수입니다";
+	}
+	else{
+		 str = "홀수입니다";
+	}
+	System.out.print("랜덤으로 발생시킨 "+num+"\n\t==>"+str);
 		
-	// 랜덤하게 숫자 만들고
-	int no = (int)(Math.random()*26);
-	
-	//숫자 판별
-	String result = (no%2==0) ? "짝수":"홀수";
-	//()?():(); 형식 만들고 채워나가기
-	//출력
-	 
-	
-	System.out.println("랜덤한 숫자 "+no+" "+result);
 	}
 	
 	}

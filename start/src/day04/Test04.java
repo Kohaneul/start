@@ -15,8 +15,16 @@ public class Test04 {
 	//입력 받음 변수에 기억시킴
 	int num = sc.nextInt();
 	//기억 시킨 변수를 짝수인지, 홀수인지 판별
-	String result = (num%2==0) ? ("짝수") : ("홀수");
+	String str = "";
+	if(num%2==0) {
+		str = "짝수";
+	}
+	else {
+		str = "홀수";
+	}
+	
+	
 	//출력
-	System.out.println("입력받은 숫자["+num+"]은 " + result+"입니다.");
+	System.out.println("입력받은 숫자 ["+num+"]  " + str+" 입니다.");
 	}
 }

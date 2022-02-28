@@ -7,5 +7,7 @@ public class Test05 {
 		boolean boo = (no1==no2)&&(no1++>no2);
 		System.out.println(no1);
 		
+		
+		
 	}
 }
