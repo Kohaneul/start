@@ -11,12 +11,11 @@ package Day05.ex;
 public class Ex02 {
 
 	public static void main(String[] args) {
-	char ch = 'A'-1;
-	int num = 10;
+	char ch = 'A';
 	
-	for(int i = 0; i<num;i++) {
+	for(int i = 0; i<10;i++) {
 		ch+=1;
-		System.out.println((i+1)+"번째 : "+ch);
+		System.out.println((char)(ch-1));
 	}
 	
 

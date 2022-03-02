@@ -8,46 +8,53 @@ package Day05.ex;
  			
  */
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Ex13 {
 
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
-	System.out.println("최소공배수, 최대공약수 를 구할 두 수를 입력하시오");
 	
-	int num1 = sc.nextInt();
-	int num2 = sc.nextInt();
+	// 1번 입력메세지
+	System.out.println("첫번째 숫자 : ");
+	// 1번 데이터 기억
+	int no1 = sc.nextInt();
+	// 2번 입력메세지
+	System.out.println("두번째 숫자 : ");
+	// 2번 데이터 기억
+	int no2 = sc.nextInt();
+	
+	
+	// 두 수 중 작은 수 찾기
+	int min = (no1<no2)?no1:no2;
+	
+	// 공약수 찾기
+	// 결과 출력하기
 	int result = 1;//최소공약수, 최대공약수
-
-	int num3= 0;
-	
-	if(num1>num2) {
-		num3 = num1;
-	}
-	else {
-		num3 = num2;
-	}		
-	for(int i = 1; i<num3;i++) 
-	{
-		if(num1%i==0 && num2%i==0) {
-			int temp1 = num1;
-			int temp2 = num2;
-			temp1 /=i;
-			temp2 /=i;
-			result =i*temp1*temp2;
+	for(int i = min; i>1;i--) {
+		if(no1%i==0 && no2%i==0) {
+			result =  i;
+			
+			//원하는 숫자를 찾았으므로, 더이상 반복작업을 할 이유가 없다.
+			break;
+			//따라서 즉시 반복문을 종료시켜준다.
+			
+			
+			
 			
 		}
 	}
-	System.out.println(num1+"과"+num2+"의 최소공약수는"+result);
 	
-	for(int i = 1; i<num3;i++) {
-		if(num1%i==0 && num2%i==0) {
+	
+	System.out.println("입력받은 두 수 : "+no1+" | "+no2+"의\n 최대 공약수는 : "+
+	result+" 입니다.");
+	
+	int max = (no2>no1)?no2:no1;
+	for(int i = 1;i<max;i++) {
+		if(no1%i==0 && no2%i==0) {
 			result = i;
 		}
 	}
-
-	System.out.println(num1+"과"+num2+"의 최대공배수는"+result);
 	
 	}
 }

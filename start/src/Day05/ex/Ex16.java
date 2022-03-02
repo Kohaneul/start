@@ -13,28 +13,28 @@ package Day05.ex;
 	...
 	3 x 9 = 27		5 x 9 = 45		7 x 9 = 63 		9 x 9 = 81
 	
+	주의] 
+		카운터 변수의 사용 위치가 정해져 있는 것은 아니다.
+		
 
 */
 
 
 public class Ex16 {
-
+	int no;//전역변수
+	public void abc() {
+		no = 1000;
+		int num = 200;//지역변수
+	}
+	public void xyz() {
+		no = 5000;
+	}
+	
+	
 	public static void main(String[] args) {
-		for(int i = 1; i<10;i++) 
-		{
-			for(int j = 2;j<10;j+=2) {
-				System.out.printf("%s X %s = %s\t",j,i,i*j);
-			}
-			System.out.println();
-		}
-		for(int i = 1; i<10;i++) 
-		{
-			for(int j = 3;j<10;j+=2) {
-				System.out.printf("%s X %s = %s\t",j,i,i*j);
-			}
-			System.out.println();
-		}
-
+	int no1 = 100;
+	//카운터변수도 해당 for 명령문 안에서 작동하는 지역변수다..
+		
 	}
 
 }

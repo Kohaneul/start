@@ -3,27 +3,38 @@ package Day05.ex;
 문제 7 ]
 	5자리의 숫자를 입력한 후
 	각자리의 수의 합을 구하는 프로그램을 작성하세요.
-*/
+	
+	힌트 ]
+	 ***** % 10 ==> 마지막 자리
+	 ***** /10 ==> **** 잘라내게 됨
+
+			*/
 
 import java.util.Scanner;
 
 public class Ex07 {
 
 	public static void main(String[] args) {
+	//입력도구 준비
 	Scanner sc = new Scanner(System.in);
-	System.out.print("5자리 숫자 입력 : ");
-	String str = sc.nextLine();
-	int num = Integer.parseInt(str);
-	int a = (num/10000)%10;
-	int b = (num/1000)%10;
-	int c = (num/100)%10;
-	int d = (num/10)%10;
-	int e = num%10;
+	//메세지 출력
+	System.out.print("5자리 정수 입력 : ");
+	//입력받고 기억하고
+	int no = sc.nextInt();
+	//반복해서 합 구하고
+	int sum=0;
+	int temp = no;
+	for(int i = 0; i<5;i++) {
+		sum += temp%10;
+
+		//1234
+		temp = temp/10;
+	}
 	
-	int result = a+b+c+d+e;
-	System.out.println(str +"==> "+a+" + "+b+" + "+c+" + "+d+" + "+e);
-	System.out.println("입력받은 숫자 "+str+"의 각 자릿수의 합은? : "+result+"입니다.");
+		System.out.println("입력한 수 "+no+"의 각 자리수의 합은?\n "+sum);
 	
+	
+	//결과 출력	
 	
 	}
 
