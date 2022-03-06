@@ -24,40 +24,45 @@ package Day05.ex;
 public class Ex14 {
 
 	public static void main(String[] args) {
-	int a = 0;
-	int b = 0;
-	int c = 0;
-	int d = 0;
-	int temp = 0;
-	int temp2 = 0;
-	int temp3 = 0;
-	int temp4 = 0;
-	for(a = 3 ; a<10;a++) {
-		for(d = 1; d<8;d++) {
-			if(a==d+2) {
-				temp =a;
-				temp2 =d;
-				
+		int a,b,c,d = 0;
+		int result = 0;
+		
+		loop:
+		for(a = 3; a<=9;a++) {
+			d = a-2;
+			for(b = 2; b <10;b++) {
+				if(b==a || b==d) 
+				{
+					continue;
+					
+					// 이 경우는 같은 숫자가 발생하는 경우므로 
+					// 조건에 맞지 않으므로 다음 번호를 추출해서 
+					// 다른 조건을 비교해야 한다.
+				}
+				//이 라인을 실행하는 경우는 
+				//b가 a,d와 같은 경우이다.
+				for(c = 1 ; c<b;c++) {
+					
+					if(c == a || c ==d) 
+					{
+						continue;
+					}
+					//이 행을 실행하는 순간은 필요한 숫자가 모두 만들어 졌다.
+					int no1 = a*1000 + b*100+c*10+d;
+					int no2 = d*1000 + c*100+b*10+a;
+					if(no1+no2==16456) {
+						result = no1;
+						break loop;
+					}
+					
+				}
+			}
+			
+			
 		}
-	}
+		System.out.println("찾는 번호는 "+result+"입니다.");
 		
 	}
-	for(b = 1; b<10;b++) {
-		for(c = 1;c<10;c++) {
-			if(b>c) {
-				temp3 = b;
-				temp4 = c;
-				
-			}
-		}
-	}
-	int result = temp*1000+temp3*100+temp4*10+temp2;
-	int result2 = temp2*1000+temp4*100+temp3*10+temp;
-	if(result+result2==16456) {
-		System.out.println(result);
-	}
-	
-}
 }
 
 		

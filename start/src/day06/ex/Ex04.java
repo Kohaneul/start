@@ -1,4 +1,4 @@
-package ex;
+package day06.ex;
 
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ import java.util.Scanner;
 
 */
 
-public class Ex03{
+public class Ex04{
 	
 	public static void main(String[] args) {
 		/*
@@ -100,14 +100,17 @@ public class Ex03{
 */
 		
 		System.out.println("==============================");
-		
-		for(int i = 0; i<6;i++){
-			for(int j = 0; j<5;j++) {
+
+		for(int i = 0; i<5;i++) {
+			for(int j = 0; j<5-i;j++) {
+				System.out.print(" ");
+			}
+			for(int j = 5; j<5-i;j++) {
 				System.out.print("*");
 			}
 			System.out.println();
 		}
-
+	
 		
 	}
 	
