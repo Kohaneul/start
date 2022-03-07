@@ -6,6 +6,8 @@ Ex02 ]
 	다섯과목의 7학생의 배열로 바꿔서 
 	해결하세요.
 	
+
+	
 */
 
 public class Ex02 {
@@ -16,25 +18,27 @@ public class Ex02 {
 		for(int i = 0; i<stud.length;i++) {
 			for(int j = 0; j<stud[i].length-1;j++) {
 				stud[i][j] = (int)(Math.random()*(100-60+1)+60); 
-			System.out.print(stud[i][j]+" ");
+			
 			}
-			System.out.println();
+		
 		}
-		System.out.println("========================");
-		for(int i = 0; i<stud.length;i++) {
-			stud[i][5] = (i+1);
-		}
+	
+		
+		
+		
+		
 		
 		for(int i = 0; i<stud.length;i++) {
-			System.out.print("학생("+(i+1)+") ");
+			System.out.print((char)('A'+i)+"학생 ");
 			for(int j = 0; j<stud[i].length-1;j++) {
-				System.out.print((char)('A'+j)+" : "+stud[i][j]+" ");
+				System.out.print("과목"+(j+1)+" "+stud[i][j]+" ");
 			}		
 			System.out.println();
 		}
 		
 			int[][] stud2 = new int[5][7];
 			//5 과목, 7학생
+			
 			for(int i = 0; i<stud2.length;i++) {
 				for(int j = 0; j<stud2[i].length;j++) {
 					stud2[i][j] = stud[j][i];
@@ -42,6 +46,8 @@ public class Ex02 {
 				}
 				
 			}
+			
+
 			
 			
 			for(int i = 0; i<stud2.length;i++) {
@@ -63,9 +69,9 @@ public class Ex02 {
 				}
 			}
 			for(int i = 0; i<stud2.length;i++) {
-				System.out.println("<<"+(char)(i+'A')+" 과목 >>");
+				System.out.println("<< 과목"+(i+1)+" >>");
 				for(int j = 0; j<stud2[i].length;j++) {
-					System.out.print(stud[j][5]+"학생"+stud2[i][j]+" ");
+					System.out.print((char)('A'+j)+"학생"+stud2[i][j]+" ");
 				}
 				System.out.println();
 			}
