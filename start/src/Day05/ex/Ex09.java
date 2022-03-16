@@ -12,20 +12,22 @@ package Day05.ex;
 public class Ex09 {
 
 	public static void main(String[] args) {
-	int no = -1;
 	int sum = 0;
-	int i = 1;
-	for(i = 1;;i++) {
-		no *=-1;
-		sum=sum+i*no;
-	
-		if(sum>100) {
+	for(int i = 1;;i++) {
+		int no = i;
+		
+		if(i%2==1) {
+			no = i;
+		}
+		else if(i%2==0) {
+			no = i*(-1);
+		}
+		sum+=no;
+		if(sum >100) {
+			System.out.println(i+"까지 더한 수의 값은"+sum+"입니다.");
 			break;
 		}
-	
 	}
-	System.out.println("1부터"+(i*no)+" 까지의 합이 "+sum+"으로 처음 100을 넘기게 된다.");
-		
 		
 		
 		

@@ -11,30 +11,36 @@ package day09.ex;
 
 
 public class Ex03 {
+	int width,height,area;
 	public Ex03(){
-		int no1 = setArea();
-		int no2 = setArea();
-		toPrint(no1,no2);
-	}	
+		setting();
+		toPrint();
+		
+	}
+	public void setting() {
+		width = (int)(Math.random()*21+10);
+		height = (int)(Math.random()*21+10);
+	}
+	
+	public int getArea(int num1,int num2) 
+	{
+		return num1*num2;
+	}
+	public void toPrint() {
+		area = getArea(width,height);
+		System.out.printf("가로 : %d 세로 %d의 사각형 ==> 넓이 : %d\n",width,height,area);
+	}
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 	new Ex03();}
 	
-	public int setArea() {
-	int num =0;
-	num = (int)(Math.random()*100+1);
-	return num;
-	}
 	
-	public int calcArea(int no, int no2) {
-		int result= 0;
-		result = no*no2;
-		return result;
-	}
 	
-	public void toPrint(int no, int no2) {
-		System.out.println("입력한 수 : "+no+" , "+no2);
-		System.out.println("넓이 : "+calcArea(no,no2));
-	}
 	
 	
 

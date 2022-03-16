@@ -21,8 +21,8 @@ public class Ex01 {
 		int result = (no1>no2&&no1>no3)?(no1):(no2>no1&&no2>no3)?no2:no3;
 		//출력한다
 		
-		System.out.printf("no1 : %s , no2 : %s , no3 : %s \n 결과는? %s",no1,no2,no3,result);
-		System.out.println("입력한 세 정수\n"+no1+", "+no2+", "+no3+"\n 중 가장 큰 수는"+result+"입니다.");
+		System.out.printf("[no1] %s , [no2] %s , [no3] %s \n결과는? %s\n",no1,no2,no3,result);
+		System.out.println("입력한 세 정수 : "+no1+", "+no2+", "+no3+"\n\t가장 큰 수는 "+result+" 입니다.");
 		/*
 		 참고 ] 문자열을 표현할 때 문자열 안에 "기호를 출력하는 방법
 		 ==> 

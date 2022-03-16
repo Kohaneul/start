@@ -3,16 +3,14 @@ package day11;
 
 public class Nemo {
 	private int garo,sero,area,rank;
-	{
-		rank = 1;
-	}
+	
 	Nemo(){}
 	Nemo(int garo, int sero){
 		this.garo = garo;
 		this.sero = sero;
 		this.area = getArea();
 		setArea();
-		rank = 1;
+		this.rank = 1;
 		
 	}
 	
@@ -49,7 +47,7 @@ public class Nemo {
 	}
 
 	public void setRank(int rank) {
-		this.rank = 0;
+		this.rank = rank;
 	}
 	
 	

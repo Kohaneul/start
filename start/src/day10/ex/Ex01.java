@@ -18,64 +18,44 @@ package day10.ex;
 
 public class Ex01 {
 	String name;
-	int ban, no, kor, eng, math;
+	int ban, no, kor, eng, math,total;
+	double avg;
 	Student s;
 	Ex01(){
-		setData();
-		s = getData();
-		toPrint();
-		
+		setting();
+		getData();
 	}
-	public void setData() {
-		name = "홍길동";
-		ban = 1;
-		no = 10;
-		kor = (int)(Math.random()*41+60);
-		eng = (int)(Math.random()*41+60);
-		math = (int)(Math.random()*41+60);
-	}
-	public Student getData() {
+	
+	public void setting() {
 		s = new Student();
-		s.setName(name);
-		s.setBan(ban);
-		s.setNo(no);
-		s.setKor(kor);
-		s.setEng(eng);
-		s.setMath(math);
-		return s;
+		s.setName("홍길동");
+		s.setBan((int)(Math.random()*3+3));
+		s.setNo((int)(Math.random()*30+20));
+		s.setEng((int)(Math.random()*41+60));
+		s.setMath((int)(Math.random()*41+60));
+		s.setKor((int)(Math.random()*41+60));
 	}
 	
-	public int add() {
-		int result = 0;
-		result = kor+eng+math;
-		return result;
-	}
-	public double avg() {
-		double result = 0.0;
-		result = add()/3.0; 
-		return result;
+	public int getAdd() {
+		return s.getKor()+s.getEng()+s.getMath();
 	}
 	
-	public void toPrint() {
+	
+	public void getData() {
+		String name = s.getName();
+		int ban = s.getBan();
+		int no = s.getNo();
+		int kor = s.getKor();
+		int eng = s.getEng();
+		int math = s.getMath();
+		int total = getAdd();
+		double avg = total/3.0;
 		
-		
-		name = s.getName();
-		ban = s.getBan();
-		no = s.getNo();
-		kor = s.getKor();
-		eng = s.getKor();
-		math = s.getMath();
-		
-		System.out.println("이름 : "+name);
-		System.out.println("반 : "+ban);
-		System.out.println("번호 : "+no+"번");
-		System.out.println("국어점수 : "+kor+"점");
-		System.out.println("영어점수 : "+eng+"점");
-		System.out.println("수학점수 : "+math+"점");
-		System.out.println("총점 : "+add()+"점");
-		System.out.println("평균 : "+avg()+"점");
-		
+		System.out.printf("이름 : %s (%d 반, %d번)의 성적)\n",name, ban,no);
+		System.out.printf("국어 : %d / 수학 : %d / 영어 : %d \n",kor,math,eng);
+		System.out.printf("총점 : %d / 평균 : %.2f\n",total,avg);
 	}
+	
 	
 	
 	

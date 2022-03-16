@@ -11,12 +11,89 @@ package day09.ex;
 
 
 public class Ex05 {
-	
+	int math,eng,korea,total,rank;
+	int[][] student;
 	public Ex05() {
-		int[][]ar = getScore();
-		int[]sum = getAdd(ar);
-		int[] rank = getRank(sum);
-		toPrint();
+	student = setting();
+	setTotal();
+	getRank();
+	toPrint();
+	setArr();
+	toPrint();
+		
+	}
+	public int getRnd() {
+		return (int)(Math.random()*41+60);
+	}
+	public int[][] setting() {
+		student = new int[10][5];
+		for(int i = 0; i<student.length;i++) {
+			for(int j = 0; j<student[i].length;j++) {
+				student[i][0] = getRnd();
+				student[i][1] = getRnd();
+				student[i][2] = getRnd();			}
+			}
+	
+		return student;
+	}
+	
+	public void setTotal() {
+	
+		for(int i = 0; i<student.length;i++) {
+			total = 0;
+			for(int j = 0; j<student[i].length;j++) {
+				total+=student[i][j];
+				student[i][3] = total;
+			}
+			
+		}
+		
+		
+	}
+
+	public void getRank() {
+	
+		for(int i = 0; i<student.length;i++) {
+			int temp = 1;
+			for(int j = 0; j<student.length;j++) {
+				if(student[i][3]<student[j][3]) {
+					temp++;
+				}
+			}
+			 student[i][4] = temp;
+		}
+	}
+	
+	public void setArr() {
+		System.out.println("*********정렬 후***********");
+
+		for(int i = 0; i<student.length;i++) {
+			for(int j = i+1; j<student.length;j++) {
+				if(student[i][4]>student[j][4]) {
+					for(int k = 0; k<student[i].length;k++) {
+						int temp = student[i][k];
+						student[i][k] = student[j][k];
+						student[j][k] = temp;
+					}
+				}
+			}	
+	
+	}
+		}
+		
+	public void toPrint() {
+		
+		for(int i = 0; i<student.length;i++) {
+			for(int j = 0; j<student[i].length;j++)
+			{	korea = student[i][0];
+				eng = student[i][1];
+				math = student[i][2];
+				total = student[i][3];
+				rank = student[i][4];
+				
+			}
+			System.out.printf("[%d등] 국어 : %d, 영어 : %d, 수학 : %d , 총점 : %d \n",rank, korea,eng,math,total);
+		}
 	}
 		
 		
@@ -24,65 +101,11 @@ public class Ex05 {
 	new Ex05();}
 	
 	//점수입력
-	public int[][] getScore(){
-		int[][]ar = new int[10][3];
-		for(int i = 0; i<ar.length;i++) {
-			for(int j = 0; j<ar[i].length;j++) {
-				ar[i][j] = (int)(Math.random()*41+60);
-				
-			}
-		}
-		return ar;
-	}
-	
-	//총점 구하기
-	public int[] getAdd(int[][]ar) {
-		int[]arr = new int[10];
-		for(int i = 0; i<ar.length;i++) {
-			for(int j = 0; j<ar[i].length;j++) {
-			arr[i]+=ar[i][j];	
-			}
-		
-		}
-		
-		return arr;
-	}
-	//석차구하기
-	public int[] getRank(int[]ar) {
-		int[] rank = new int[10];
-		int rankk = 1;
-		for(int i = 0; i<ar.length;i++) {
-			for(int j= 0; j<ar.length;j++) {
-			if(ar[i]<ar[j]) {
-				rankk++;
-			}
-			rank[i] = rankk;
-			
-			}
-			rankk =1;
-		}
-		return rank;}
-	
-	public void toPrint() {
-	
-		int [][]ar = getScore();
-		for(int i = 0; i<ar.length;i++) {
-			for(int j = 0; j<ar[i].length;j++) {
-				
-				System.out.print(ar[i][j]+" ");
-			}
-			int[] add = getAdd(ar);
-			int[] rank = getRank(add);
-			System.out.print(add[i]+" "+rank[i]);
-			System.out.println();	
-		}
-		
-	}
 	
 	
 
 		
-		}
+}
 		
 	
 	

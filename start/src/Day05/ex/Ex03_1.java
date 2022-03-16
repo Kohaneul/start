@@ -25,7 +25,6 @@ public class Ex03_1 {
 	int B = 'Z';
 	int C = 'a';//48
 	int D = 'z';
-	System.out.println(A+"~"+B+" "+C+"~"+D);
 	String str = "특수문자 입니다.";
 	int ran = 0;
 	char ch = ' ';

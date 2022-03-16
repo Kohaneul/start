@@ -37,7 +37,7 @@ public class Ex08 {
 		//합계변수에 누적
 	}
 	
-	System.out.println("입력한 숫자 ["+sno+"]의 각 자리의 합은?"+sum+"입니다.");
+	System.out.println("입력한 숫자 ["+sno+"]의 각 자리의 합은? "+sum+"입니다.");
 		}
 
 }

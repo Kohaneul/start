@@ -10,21 +10,13 @@ public class Test08 {
 		String word1, word2;
 		
 		
-		
-		
-		//Black 추출
-	
-		
-		
-		
-		
 		//' '의 위치
 		int index = black.indexOf(" ");
-	 // <== 문자열 중 특정 문자열 위치값 알려주는 함수
+		//indexOf <== 문자열 중 특정 문자열 위치값 알려주는 함수
+		//Black 추출
 		word1 = black.substring(0,index);
 		System.out.println(word1);
 		word2 = black.substring(index+1);
-		
 		
 		
 		//Pink 추출

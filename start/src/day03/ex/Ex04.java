@@ -29,7 +29,7 @@ public class Ex04 {
 			//0.1*24 => 0.1일의 시간
 			
 			int tsec = (int)(0.2426*24*60*60);
-			System.out.println(tsec);
+		
 			
 		// 시간 구하고 -> 누적 변수에 계산해서 업데이트
 			int hour = tsec/(60*60);

@@ -31,7 +31,7 @@ public class Ex07 {
 		temp = temp/10;
 	}
 	
-		System.out.println("입력한 수 "+no+"의 각 자리수의 합은?\n "+sum);
+		System.out.println("입력한 수 "+no+"의 각 자리수의 합은?  "+sum);
 	
 	
 	//결과 출력	

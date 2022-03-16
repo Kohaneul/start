@@ -8,9 +8,9 @@ package day12.Figure2;
 
 
 
-public abstract class Figure {
+public abstract interface Figure {
+	public void setArea();
+	public void toPrint();
 	
-	public abstract void setArea();
-	public abstract void toPrint();
 	
 }

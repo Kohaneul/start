@@ -9,15 +9,11 @@ public class Sagak extends Figure{
 	public Sagak(int width, int height) {
 		this.width = width;
 		this.height = height;
-	
+		setArea();
 	}
 	
 	
-	@Override //상속중인 클래스를 컴파일에게 알림.
-	public void getArea() {
-		area  = width*height;
-		
-	}
+	
 
 	public int getWidth() {
 		return width;
@@ -34,6 +30,19 @@ public class Sagak extends Figure{
 	public void setHeight(int height) {
 		this.height = height;
 	}
+
+	public double getArea() {
+		return area;
+	}
+
+	public void setArea(double area) {
+		this.area = area;
+	}
+	public void setArea() {
+		area = width*height;
+	}
+	
+	
 	
 	
 }

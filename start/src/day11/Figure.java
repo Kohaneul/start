@@ -6,9 +6,7 @@ public class Figure {
 		return area;
 	}
 	
-	public void setArea(double area) {
-		this.area = area;
-	}
+	
 	public void setArea() {}
 
 }

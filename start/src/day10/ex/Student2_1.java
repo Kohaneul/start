@@ -15,55 +15,79 @@ package day10.ex;
 	
 */
 public class Student2_1{
-	int ban, no,kor,eng,math;
-	int total;
-	int[] rank;
-	double avg;
 	String name;
-	Student2[] s;
+	int ban, no, kor, eng, math,rank,total;
+	double avg;
+	Student[] s;
 	Student2_1(){
-		Setting();
-		for(int i = 0; i<s.length;i++) {
-			System.out.printf("학생이름 : 학생%c (%s 번)\n",s[i].getName(),s[i].getNo());
-			System.out.printf("점수) 국어 : %d, 영어 : %d, 수학 : %d\n",s[i].getKor(),s[i].getEng(),s[i].getMath());
-			System.out.printf("\t총점 : %d, 평균 : %s\n",s[i].getTotal(),s[i].getAvg());
-			System.out.println(rank[i]);
-			
-		}
+		setting();
+//		toPrint();
+		
 	}
 	
-	public void getRank() {
-		int temp = 1;
-		rank = new int[5];
+	public void setting() {
+			s = new Student[5];
 		for(int i = 0; i<s.length;i++) {
-			for(int j = 0; j<s.length;j++) {
-				if(s[i].getTotal()<s[i].getTotal()) {
-					temp++;
-				}
-			}rank[i] = temp;
-			
-		}
-	
-		temp = 1;
-	}
-	
-	public void Setting() {
-		s= new Student2[5];
-		for(int i = 0; i<s.length;i++) {
-			int no = (int)(Math.random()*30+1);			
-			char name = (char)(Math.random()*('Z'-'A'+1)+'A');
+			Student stud = s[i];
+			String name = (char)(Math.random()*('Z'-'A'+1)+'A')+"학생";
+			int ban = (int)(Math.random()*11+1);
+			int no = (int)(Math.random()*31+1);
 			int kor = (int)(Math.random()*41+60);
 			int eng = (int)(Math.random()*41+60);
 			int math = (int)(Math.random()*41+60);
-			s[i] = new Student2(kor,eng,math);
-			s[i].setNo(no);
-			s[i].setName(name);
-	
+			int total = getAdd();
+			double avg =getAvg();
+					
+			
+			
 			
 		}
-
+		
 	}
 	
+
+	
+	public int getAdd() {
+		return kor+eng+math;
+	}
+	public double getAvg() {
+		return getAdd()/3.0;
+	}
+	
+	public void getRank() {
+		for(int i = 0; i<s.length;i++) {
+			for(int j = 0; j<s.length;j++) {
+				int rank = s[i].getRank(); 
+				if(s[i].getTotal()<s[j].getTotal()) {
+					s[i].setRank(rank+1);
+				}
+			}
+			
+		}
+		
+	}
+	
+	public void toPrint() {
+		for(Student n : s) {
+			String name = n.getName();
+			
+			int ban = n.getBan();
+			int no = n.getNo();
+			int kor = n.getKor();
+			int eng = n.getEng();
+			int math = n.getMath();
+			int rank = n.getRank();
+			int total = n.getTotal();
+			double avg = n.getAvg();
+			
+			System.out.printf("이름 : %s (%d반 %번)\n",name,ban,no);
+			System.out.printf("국어성적 : %d  / 수학성적 : %d / 영어성적 : %d\n",kor,math,eng);
+			System.out.printf("\t=>총점 : %d, 평균 %.2f (%d등)\n",total,avg,rank);
+			
+					
+		}
+		
+	}
 	
 	
 	

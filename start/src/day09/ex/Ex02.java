@@ -16,39 +16,76 @@ package day09.ex;
 
 
 public class Ex02 {
+	int rad;
+	double arround, area;
+	Circle c;
 	Ex02(){
-		int num = setRadius();
-		toPrint(num);
-	}
-	public static void main(String[] args) {
-	new Ex02();}
-	
-	public int setRadius() {
-		int num = 0;
-		num= (int)(Math.random()*10+1);
-		return num;
-	}
-	public double getArea(int num) {
-		double result = 0.0;
-		result = num*num*3.14;
-		return result;
-	}
-	public double getRound(int num) {
-		double result = 0.0;
-		result = 2*num*3.14;
-		return result;
+		setting();
+		toPrint();
 	}
 	
-	public void toPrint(int num) {
-		System.out.println("입력한 반지름의 길이 : "+num );
-		System.out.println("입력한 반지름의 넓이 : "+getArea(num));
-		System.out.println("입력한 반지름의 둘레 : "+getRound(num));
+	public int setRnd() {
+		return (int)(Math.random()*11+1);
+	}
+	public void setting() {
+		c= new Circle(setRnd());
 		
 	}
-	
-	
+	public void toPrint()
+	{
+		rad = c.getRad();
+		arround = c.getArround();
+		area = c.getArea();
+		
+		System.out.printf("반지름 길이 : %d \n둘레 : %6.2f , 넓이 : %6.2f",rad,arround,area);
+	}
+	public static void main(String[] args) {
+		new Ex02();
+	}
 	
 	
 	}
+
+
+class Circle {
+	private int rad;
+	private double area,arround;
+	
+	Circle(int rad){
+		this.rad =rad;
+		setArea();
+		setArround();
+		
+	}
+	Circle(){}
+	
+	
+	public int getRad() {
+		return rad;
+	}
+	public void setRad(int rad) {
+		this.rad = rad;
+	}
+	
+	
+	
+	public double getArea() {
+		return area;
+	}
+	public void setArea(double area) {
+		this.area = area;
+	}
+	
+	public void setArea() {
+		area = Math.PI*rad*rad;
+	}
+	public double getArround() {
+		return arround;
+	}
+	public void setArround() {
+		arround = 2*rad*Math.PI;
+	}
+	
+}
 
 

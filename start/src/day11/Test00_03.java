@@ -7,6 +7,7 @@ public class Test00_03 {
 	
 	Test00_03(){
 		setting();
+		setRank();
 		toPrint();
 	}
 	
@@ -27,11 +28,10 @@ public class Test00_03 {
 	public void setRank() {
 		for(int i = 0; i<nemo.length;i++) {
 			Nemo n = nemo[i];
-			int me = n.getArea();
+			
 			for(int j = 0; j<nemo.length;j++) {
-				int na = n.getRank();
-				int you = nemo[j].getArea();
-				if(me<you) 
+				int na = n.getRank();	
+				if(nemo[i].getArea()<nemo[j].getArea()) 
 				{
 					n.setRank(na+1);
 					
@@ -43,6 +43,11 @@ public class Test00_03 {
 		
 		
 	}
+	
+	
+	
+	
+	
 	
 	
 	public void toPrint() {

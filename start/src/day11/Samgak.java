@@ -11,7 +11,7 @@ public class Samgak extends Figure{
 	
 	}
 	@Override
-	public void getArea() {
+	public void setArea() {
 		area = width*height/2;
 	}
 	public int getWidth() {
