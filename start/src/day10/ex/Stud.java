@@ -1,7 +1,7 @@
 package day10.ex;
 
 
-public class Student {
+public class Stud {
 	private String name;
 	private int rank, total,ban,no,kor,eng,math;
 	private double avg;

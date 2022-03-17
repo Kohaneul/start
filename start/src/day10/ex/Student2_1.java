@@ -21,7 +21,7 @@ public class Student2_1{
 	Student[] s;
 	Student2_1(){
 		setting();
-//		toPrint();
+		toPrint();
 		
 	}
 	

@@ -20,9 +20,6 @@ public class Student2{
 		this.math = math;
 		this.kor = kor;
 	
-		
-		
-		
 	}
 	
 	

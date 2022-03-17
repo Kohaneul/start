@@ -21,7 +21,7 @@ public class Ex01 {
 	public static void main(String[] args) {
 	int count = 0;
 	Scanner sc = new Scanner(System.in);
-	System.out.print("3 ~ 100까지의 정수를 입력하시오");
+	System.out.print("3 ~ 100까지의 정수를 입력하시오 : ");
 	int input = sc.nextInt();
 	String str = "";
 	for(int i = 1; i<=input; i++) {
@@ -29,13 +29,13 @@ public class Ex01 {
 		if(input%i==0) {
 			count++;
 			
-			System.out.println(count+" "+i);
+			
 			if(count<3) {
-				str = "소수입니다.";
+				str = input+"은 소수입니다.";
 			}
 		}
 		else {
-			str="소수가 아닙니다.";
+			str=input+"은 소수가 아닙니다.";
 		}
 		
 	}
@@ -45,7 +45,7 @@ public class Ex01 {
 		for(int j = 1;j<=i;j++) {
 			if(i%j==0) {
 				count++;
-				System.out.println(i+" "+j);
+				
 		}
 		
 		}

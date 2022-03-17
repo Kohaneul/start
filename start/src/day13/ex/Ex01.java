@@ -1,4 +1,7 @@
 package day13.ex;
+
+import java.util.Scanner;
+
 /*
  	
  	String[] ar = {"123","456","789",....};
@@ -13,75 +16,76 @@ package day13.ex;
  		4. 위의 세가지 이외의 경우
  		 
  */
-
-import java.util.Scanner;
 	public class Ex01{
-	String[] ar;
-	Ex01(){
-	Scanner sc = new Scanner(System.in);
-	setArr(sc);
-	setIdx(sc);
-	try {
-	setNum();}
-	catch(Exception e) {
-		e.printStackTrace();
-	}
-	
-	}
-	//배열형셩
-	
-	public void setArr(Scanner sc){
-	System.out.print("배열을 형성할 길이 입력 : ");
-	int length = sc.nextInt();
-	ar = new String[length];
-	for(int i=0; i<ar.length;i++) {
-		ar[i] = sc.next();
-	}
-	}
-	
-	public void setIdx(Scanner sc){
-		System.out.print("인덱스 입력 : ");
-		int idx= sc.nextInt();
-		try {
-			System.out.println(idx+" 번쨰 인덱스: "+ar[idx]);
-		}
-		catch(IndexOutOfBoundsException e) 
-		{
-			System.out.println("배열 범위 초과");
-			return;
-		}
-	}
-	
-	int[] ar2;
-	int sum = 0;
-	//정수 변경
-	public void setNum() throws Exception{
-		ar2 = new int[ar.length];
-		try {
-		for(int i = 0; i<ar.length;i++) {
-			ar2[i] = Integer.parseInt(ar[i]);
-			}
-			getAdd();
-			int avg = getAvg();
-			System.out.println("배열의 합 : "+sum+"/ 평균 : "+avg);
+		double avg;
+		int sum = 0;
+		String[] str;
+		Ex01(){
 			
+			try {
+			Scanner sc = new Scanner(System.in);
+			setting(sc);
+			setIdx(sc);
+			setInt();
+			}
+			catch(IndexOutOfBoundsException e) {
+				System.out.println("배열범위초과");
+				e.printStackTrace();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public void setting(Scanner sc) {
+			System.out.print("배열 길이 셋팅 : ");
+			int length = sc.nextInt();
+			str = new String[length];
+			System.out.print("입력 : ");
+			for(int i = 0; i<str.length;i++) 
+			{
+				str[i] = sc.next();
+			}
+		}
+		
+		public void setIdx(Scanner sc) {
+			System.out.print("인덱스 입력 :");
+			int idx = sc.nextInt();
+			System.out.println("인덱스 : "+str[idx]);
+		}
+		
+		int[] temp;
+		public void setInt() throws Exception{
+			temp = new int[str.length];
+			try {
+			for(int i = 0; i<temp.length;i++) {
+			temp[i] = Integer.parseInt(str[i]);
+			}
+			sum = setTotal();
+			avg = setAvg();
+			System.out.println("합계 : "+sum+" 평균 : "+avg);
+			}
+			catch(Exception e) {
+				throw new Ex01_02();
+			}
+		}
+		
+		public int setTotal() {
+			for(int i = 0; i<temp.length;i++) {
+				sum+=temp[i];
+			}
+			return sum;
+		}
+		public double setAvg() {
+		return sum/temp.length;
 		
 		}
-		catch(Exception e) {
-			throw new Ex01_02();
-		}
-	}
-	
-	public int getAdd() {
-		sum= 0;
-		for(int i = 0; i<ar.length;i++) {
-			sum+=ar2[i];
-		}
-		return sum;
-	}
-	public int getAvg() {
-		return sum/ar2.length;
-	}
+		
+		
+		
+		
+		
+		
 		
 		
 		
