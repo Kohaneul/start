@@ -9,16 +9,14 @@ package day14.ex.ex02;
  */
 
 public class Ex02 {
-
+	int width, height,area;
 	public Ex02() {
-	Nemo n1 = new Nemo(10,20);
-	Nemo n2 = new Nemo(10,21);
-	n1.equals(n2);
-	System.out.println("n1 : "+n1);
-	System.out.println("n2 : "+n2);
+		Nemo n1 = new Nemo(3,4);
+		Nemo n2 = new Nemo(3,5);
+		n1.equals(n2);
+		System.out.println(n1);
+		System.out.println(n2);
 	}
-	
-	
 
 	public static void main(String[] args) {
 		new Ex02();

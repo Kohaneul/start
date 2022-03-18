@@ -13,14 +13,16 @@ package day14.ex.ex01;
  
  */
 public class Ex01 {
-
+	int rad;
+	double area, arround;
 	public Ex01() {
-		Circle c1 = new Circle(10);
-		Circle c2 = new Circle(22);
+		Circle c1 = new Circle(4);
+	
+		Circle c2 = new Circle(10);
+	
+		c1.equals(c2);
 		System.out.println(c1);
 		System.out.println(c2);
-		System.out.println(c1.equals(c2));
-
 	}
 	
 	

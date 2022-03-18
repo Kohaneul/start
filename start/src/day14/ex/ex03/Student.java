@@ -8,14 +8,23 @@ package day14.ex.ex03;
 		 단, 학생의 반과 이름이 같으면 같은 학생으로 처리하도록 하세요
 		 학생 변수를 출력한 후 모든 내용이 출력되도록 하세요
 */
+/*
+문제3 ] 
+		 학생 한명의 성적을 관리하는 클래스 Student를 작성하세요
+		 기억할 내용은
+		 반, 이름, 국어, 영어, 수학, 총점 을 기억하도록 하고
+		 필요한 기능(함수)는 필요한만큼 추가해주세요
+		 단, 학생의 반과 이름이 같으면 같은 학생으로 처리하도록 하세요
+		 학생 변수를 출력한 후 모든 내용이 출력되도록 하세요
+*/
 
 public class Student {
 	private String name;
 	private int ban, kor,eng,math,total;
 	public Student() {
 	}
-	public Student(int kor, int eng, int math) {
-		
+	public Student(String name, int kor, int eng, int math) {
+		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
@@ -91,3 +100,9 @@ public class Student {
 	
 
 }
+	
+	
+	
+	
+
+
