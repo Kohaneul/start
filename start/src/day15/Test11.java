@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import day15.circle.Circle;
-
 /*
  	5~25 사이의 랜덤한 정수를 반지름으로 하는 원을 기억할 클래스를 만들고
  	원 10개를 리스트에 채워서
@@ -13,55 +11,108 @@ import day15.circle.Circle;
  	
  */
 public class Test11 {
-	
-	public Test11() {
-	ArrayList list = new ArrayList();
-	
-	//데이터 추가
-	for(int i = 0; i<10;i++) {
-	Circle c = new Circle((int)(Math.random()*21+5));
-	list.add(c);	// 리스트에 만들어진 원을 각 방에 채워준다.
-	//이 순간 Circle 데이터는 Object 타입으로 자동형변환이 돼서 기억된다.
-	}
-	System.out.println("1. 내림차순 정렬 전");
-	for(Object o : list) {
-		//이때 꺼낸 데이터 o는 원래는 Circle 객체를 입력한 것이다.
-		// 따라서 원래 데이터로 강제 형변환  
-		Circle w = (Circle)o;
-		System.out.println(o);
-	}
-	
-	//정렬하기
-	Collections.sort(list,new Comparator() {
-
-		@Override
-		public int compare(Object o1,Object o2) {
-			int result = 0;
-			Circle c1 = (Circle)o1;
-			Circle c2 = (Circle)o2;
-			double area1 = c1.getArea();
-			double area2 = c2.getArea();
-			result = (area1-area2<=0)?-1:1;
+	Test11(){
+		
+		ArrayList list = new ArrayList();
+		
+		for(int i = 0; i<10;i++) {
+			list.add(new Circle((int)(Math.random()*(25-5+1)+5)));
 			
-			return -result;
 		}
-
+		System.out.println("정렬 전");
+		for(Object o : list) {
+			System.out.println((Circle)o);
+		}
+		
+		Collections.sort(list, new Comparator() {
+			@Override
+			public int compare(Object o1, Object o2) {
+				int result = 0;
+				Circle c1 = (Circle)o1;
+				Circle c2 = (Circle)o2;
+				
+				result = (c1.getArea()-c2.getArea()<0)?-1:1;
+				
+				return -result;
+			}
+			
+			
+		});
+		
+		
+		System.out.println("정렬 후");
+		for(Object o : list) {
+			System.out.println((Circle)o);
+		}
 		
 		
 		
-	});	
-	System.out.println("2. 내림차순 정렬 후");
-	for(Object o : list) {
-		Circle w = (Circle)o;
-		System.out.println(o);
 	}
 	
 	
 	
-	}
-
 	public static void main(String[] args) {
 		new Test11();
 	}
-
+	
 }
+
+class Circle{
+	private int rad;
+	private double arround,area;
+	
+	Circle(int rad){
+		this.rad = rad;
+		setArea();
+		setArround();
+		
+	}
+
+	public void setArea() {
+		this.area = Math.PI*rad*rad;
+	}
+	
+	public void setArround() {
+		this.arround = Math.PI*rad*2;
+	}
+
+	
+	public int getRad() {
+		return rad;
+	}
+
+	public void setRad(int rad) {
+		this.rad = rad;
+	}
+
+	public double getArround() {
+		return arround;
+	}
+
+	public void setArround(double arround) {
+		this.arround = arround;
+	}
+
+	public double getArea() {
+		return area;
+	}
+
+	public void setArea(double area) {
+		this.area = area;
+	}
+
+	@Override
+	public String toString() {
+		return "반지름 : " + rad + ", 둘레 : " + arround + ", 넓이 : " + area;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+

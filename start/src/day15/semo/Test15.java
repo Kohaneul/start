@@ -10,23 +10,32 @@ public class Test15 {
  	
  	이 예제에서는 Semo 클래스를 정렬 가능한 클래스로 만들어서 저장하는 2번 방식으로 해결해보기로 하겠다.
  */
-	public Test15() {
-		TreeSet set = new TreeSet();
-		for(int i = 0;; i++) {
-			Semo s = new Semo((int)(Math.random()*21+5),(int)(Math.random()*21+5));
-			set.add(s);
-			//15개가 채워졌는지 확인
-			if(set.size()==15) {
-				break;
-			}
-		}
-		//출력
-		ArrayList list = new ArrayList(set);
-		for(Object o : list) {
-			System.out.println(o);
+	Test15(){
+	HashSet set = new HashSet();
+	while(true) {
+		set.add(new Semo((int)(Math.random()*20+10),(int)(Math.random()*20+10)));
+		if(set.size()==15) {
+			break;
 		}
 		
 	}
+	System.out.println("<<<정렬 전>>>");
+	for(Object ob : set) {
+		System.out.println((Semo)ob);
+	}
+	System.out.println();
+	System.out.println("<<<정렬 후>>>");
+	ArrayList list = new ArrayList(set);
+	Collections.sort(list);
+	int i= 0;
+	for(Object obj : list) {
+		System.out.println((i+1)+"등 : "+(Semo)obj);
+		i++;
+	}
+	
+	}
+		
+
 
 	public static void main(String[] args) {
 	new Test15();
