@@ -11,7 +11,7 @@ public class ex02 {
  */
 	public ex02() {
 		TreeSet set = new TreeSet();
-		for(int i = 0;;i++) {
+		while(true){
 			set.add(new Num((int)(Math.random()*(99-1+1)+1)));
 			if(set.size()==10) {
 				break;

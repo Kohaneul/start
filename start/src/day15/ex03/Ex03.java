@@ -1,5 +1,6 @@
 package day15.ex03;
 
+import java.util.ArrayList;
 import java.util.TreeSet;
 
 /*
@@ -18,6 +19,7 @@ import java.util.TreeSet;
 public class Ex03 {
 //String name, int ban, int no, int java, int db,int web,int spring
 	public Ex03() {
+		ArrayList names = new ArrayList();
 		TreeSet set = new TreeSet();
 		for(int i = 0;;i++) {
 			String name = "홍길동"+(i+1);

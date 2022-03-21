@@ -27,15 +27,11 @@ public class Student implements Comparable{
 		this.db = db;
 		this.web = web;
 		this.spring = spring;
-		setTotal();
-		setAvg();
+		setTotal(java+db+web+spring);
+		setAvg(getTotal()/4.0);
 	}
 	
 
-	
-	public void setTotal() {
-		this.total = java+db+web+spring;
-	}
 
 	public void setAvg() {
 		this.avg = getTotal()/4.0;
@@ -117,8 +113,6 @@ public class Student implements Comparable{
 	}
 	
 	
-	
-	
 	@Override
 	public String toString() {
 		return ban + "반 (" + no + "번, 이름 : "+name+")\n\t==>java : " + java + ", db : " + db + ", web : "
@@ -128,18 +122,10 @@ public class Student implements Comparable{
 	public int compareTo(Object o) {
 		int result = 0;
 		Student stud = (Student)o;
-		if(ban<stud.getBan()) {
-			result = -1;
+		result = ban-stud.getBan();
+		if(result==0) {
+			result = no-stud.getNo();
 		}
-		else if(ban==stud.getBan()) {
-			if(no<stud.getNo()) {
-				result = -1;
-			}
-		}
-		else {
-			result = 1;
-		}
-		
 		
 		
 		return result;
