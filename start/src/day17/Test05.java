@@ -5,6 +5,7 @@ package day17;
  */
 
 import java.io.File;
+import java.io.FilenameFilter;
 
 
 public class Test05 {
@@ -52,7 +53,7 @@ public class Test05 {
 			System.out.println(f);}
 	
 	}
-}
+
 		
 	//정보출력
 	for(File f : infoList) {
