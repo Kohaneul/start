@@ -19,7 +19,7 @@ public class Test01 {
 		 */
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		/*
-		 	위 명령이 실행되면 JDBC가 해당 드라이버를 이용해서 연결 시도한다.
+		 	명령이 실행되면 JDBC가 해당 드라이버를 이용해서 연결 시도한다.
 		 	
 		 */
 		System.out.println("*** 드라이버 로딩 성공 ***");
