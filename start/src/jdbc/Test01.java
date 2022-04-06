@@ -54,7 +54,7 @@ public class Test01 {
 		
 		String sql = "select ename name, empno no FROM emp";
 		
-		//4. 질의명령이 준비가 되었으면 전달도구에 실어서 보내면 된다. JDBC에게....
+		//4. 질의명령이 준비가 되었으면 전달도구에 실어서 보내면 된다. JDBC에게...
 		ResultSet rs = stmt.executeQuery(sql); 
 		/*
 		 	명령을 전달하고 조회된 결과를 받아오는 함수 stmt.executeQuery(sql)
