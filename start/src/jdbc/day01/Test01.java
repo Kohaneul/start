@@ -1,4 +1,4 @@
-package jdbc;
+package jdbc.day01;
 
 // JDBC 사용을 위한 클래스를 준비한 패키지를 임포트 한다.
 import java.sql.*;

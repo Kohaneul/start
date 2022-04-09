@@ -1,11 +1,12 @@
-package jdbc;
+package jdbc.day01;
 
 import java.util.*;
 import java.util.Date;
+
+import jdbc.sql_me.*;
+
 import java.sql.*;
 import java.text.*;
-
-import jdbc.sql.*;
 
 /*
 	emp 테이블의 데이터를 조회하는데

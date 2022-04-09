@@ -1,4 +1,4 @@
-package jdbc.sql;
+package jdbc.sql_me;
 
 /*
  	사원들의 정보와 관련된 데이터베이스작업을 할 떄 필요한 질의명령을 모아놓았다가 요구하면 
@@ -23,7 +23,7 @@ public class EmpSQL {
 		//반환값을 만들 변수
 		StringBuffer buff= new StringBuffer();
 		//코드가 어떤거냐에 따라 달라짐
-		switch(code) {
+		switch(code) {	
 			case SEL_ALL : 
 				buff.append("select ");
 				buff.append("	empno, ename, job, hiredate ");

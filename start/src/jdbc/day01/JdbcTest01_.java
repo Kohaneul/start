@@ -1,4 +1,4 @@
-package jdbc;
+package jdbc.day01;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import jdbc.sql.EmpSQL;
+import jdbc.sql_me.EmpSQL;
 
 
 
